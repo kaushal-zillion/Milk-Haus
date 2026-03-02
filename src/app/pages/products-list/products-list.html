@@ -129,7 +129,8 @@
         @if (filteredProducts().length > 0) {
         <div class="paginator-wrap">
             <mat-paginator [length]="filteredProducts().length" [pageSize]="pageSize()" [pageIndex]="pageIndex()"
-                [pageSizeOptions]="[4,8]" (page)="handlePageEvent($event)" aria-label="Select page"></mat-paginator>
+                [pageSizeOptions]="[4,8,products().length]" (page)="handlePageEvent($event)"
+                aria-label="Select page"></mat-paginator>
         </div>
         }
         }

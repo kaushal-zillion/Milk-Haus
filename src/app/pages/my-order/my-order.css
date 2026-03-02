@@ -24,9 +24,6 @@
     --font-body: 'DM Sans', sans-serif;
 }
 
-/* ──────────────────────────────
-   PAGE SHELL
-────────────────────────────── */
 .orders-page {
     font-family: var(--font-body);
     color: var(--text);
@@ -34,9 +31,6 @@
     min-height: 100vh;
 }
 
-/* ──────────────────────────────
-   PAGE HERO
-────────────────────────────── */
 .page-hero {
     position: relative;
     background-color: #f0fdf4;
@@ -181,9 +175,7 @@
     box-shadow: 0 6px 20px rgba(15, 23, 42, 0.24);
 }
 
-/* ──────────────────────────────
-   SUMMARY STRIP
-────────────────────────────── */
+
 .summary-strip {
     display: flex;
     gap: 14px;
@@ -254,10 +246,6 @@
     letter-spacing: 0.02em;
 }
 
-/* ──────────────────────────────
-   DATE RANGE FILTER
-────────────────────────────── */
-
 
 .flex mat-form-field ::ng-deep .mat-mdc-form-field-flex {
     border-radius: var(--radius-sm) !important;
@@ -286,9 +274,7 @@
     color: #ef4444;
 }
 
-/* ──────────────────────────────
-   ORDERS LIST
-────────────────────────────── */
+
 .orders-list {
     display: flex;
     flex-direction: column;
@@ -684,16 +670,12 @@
     border-radius: 8px;
 }
 
-/* ──────────────────────────────
-   LOADING SPINNER
-────────────────────────────── */
+/* LOADING SPINNER */
 .flex.justify-center.mt-52 mat-spinner {
     --mdc-circular-progress-active-indicator-color: #10b981;
 }
 
-/* ──────────────────────────────
-   RESPONSIVE
-────────────────────────────── */
+
 @media (max-width: 768px) {
     .page-hero {
         padding: 60px 0 36px;

@@ -1,17 +1,17 @@
+
 :host {
     --sky: #2f86a5;
-    --ocean: #295a78;
-    --deep: #08283a;
+    --ocean: #293078;
+    --deep: #059669;
     --cream: #f0f8ff;
     --light: #ddf0fb;
-    --muted: #7ab8d4;
+    --muted: #0b1a21;
     --white: #ffffff;
     --text: #0d2d44;
     --error: #e05c5c;
 }
-
 .auth-page {
-    background: var(--cream);
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
     position: relative;
     overflow: hidden;
     font-family: 'DM Sans', 'Segoe UI', sans-serif;

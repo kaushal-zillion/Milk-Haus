@@ -12,9 +12,10 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { toDate } from '../../utils/date.util';
+import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'app-my-order',
-  imports: [FormsModule, Header, RouterLink, MatIcon, DatePipe, CurrencyPipe, MatProgressSpinnerModule, MatDatepickerModule, MatFormFieldModule],
+  imports: [FormsModule, Header, RouterLink, MatIcon, DatePipe, CurrencyPipe, MatProgressSpinnerModule, MatDatepickerModule, MatFormFieldModule, MatInputModule],
   templateUrl: './my-order.html',
   styleUrl: './my-order.css',
   providers: [provideNativeDateAdapter()],
@@ -32,7 +33,7 @@ export class MyOrder implements OnInit {
   endDate = signal<Date | null>(null)
 
   today: Date = new Date();
-  
+
   filteredOrders = computed(() => {
     const start = this.startDate();
     const end = this.endDate();
@@ -40,22 +41,29 @@ export class MyOrder implements OnInit {
 
     if (!start && !end) return orders;
 
-    const todayStr = toDate(new Date());
-    const startStr = start ? toDate(start) : null;
-    const endStr = end ? toDate(end) : todayStr;
+    const startTime = start
+      ? new Date(start).setHours(0, 0, 0, 0)
+      : null;
+
+    const endTime = end
+      ? new Date(end).setHours(23, 59, 59, 999)
+      : null;
 
     return orders.filter(order => {
-      const orderStr = toDate(new Date(order.createdAt));
+      const orderTime = new Date(order.createdAt).getTime();
 
-      if (startStr && !end) {
-        return orderStr >= startStr && orderStr <= todayStr;
+      if (startTime && !endTime) {
+        return orderTime >= startTime;
       }
 
-      if (!startStr && endStr) {
-        return orderStr <= endStr;
+      if (!startTime && endTime) {
+        return orderTime <= endTime;
       }
-
-      return orderStr >= startStr! && orderStr <= endStr!;
+      
+      return (
+        orderTime >= startTime! &&
+        orderTime <= endTime!
+      );
     });
   });
 

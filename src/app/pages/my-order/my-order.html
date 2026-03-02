@@ -1,35 +1,35 @@
-<div class="orders-page">
+<div class="orders-page relative overflow-hidden">
     <app-header></app-header>
-    <div class="container mx-auto px-6 py-14">
-
-        <!-- ── Page Hero ── -->
-        <div class="page-hero">
-            <div class="page-hero-bg" aria-hidden="true">
-                <div class="ph-orb ph-orb-1"></div>
-                <div class="ph-orb ph-orb-2"></div>
-                <div class="ph-grid"></div>
-            </div>
-            <div class="container mx-auto px-6 page-hero-inner">
+    <!-- ── Page Hero ── -->
+    <div class="page-hero">
+        <div class="page-hero-bg" aria-hidden="true">
+            <div class="ph-orb ph-orb-1"></div>
+            <div class="ph-orb ph-orb-2"></div>
+            <div class="ph-grid"></div>
+        </div>
+        <div class="container mx-auto px-6 page-hero-inner">
+            <div class="py-16">
                 <div>
-                    <div>
-                        <div class="section-eyebrow">
-                            <span class="eyebrow-dot"></span>Your Order
-                        </div>
-                        <h1 class="page-title">My <span>Orders</span></h1>
-                        <p class="page-subtitle">Track and manage all your DairyDrop deliveries</p>
+                    <div class="section-eyebrow">
+                        <span class="eyebrow-dot"></span>Your Order
                     </div>
-                    <a routerLink="/products" class="btn-shop-more">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
-                            <line x1="3" y1="6" x2="21" y2="6" />
-                            <path d="M16 10a4 4 0 01-8 0" />
-                        </svg>
-                        Shop More
-                    </a>
+                    <h1 class="page-title">My <span>Orders</span></h1>
+                    <p class="page-subtitle">Track and manage all your DairyDrop deliveries</p>
                 </div>
+                <a routerLink="/products" class="btn-shop-more">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 01-8 0" />
+                    </svg>
+                    Shop More
+                </a>
             </div>
         </div>
+    </div>
+    <div class="container mx-auto px-6 py-14">
+
 
         @if (isLoading()) {
         <div class="flex justify-center mt-52">
